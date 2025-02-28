@@ -46,28 +46,47 @@ $netflix = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #peliculas{
+        * {
+            box-sizing: border-box;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        #peliculas {
             display: flex;
             justify-content: space-between;
             gap: 1rem;
+            flex-wrap: wrap;
         }
-        .card{
-            padding:1rem;
+
+        .card {
+            padding: 1rem;
             box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+            flex: 1;
+            min-width: 270px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Netflix</h1>
 
-    <section id="peliculas">
-        <?php foreach ($netflix as $peli) { ?>
-            <div class="card">
-                <h2> <?= $peli['titulo'] ?>  <span><?=$peli['año'] ?></span></h2>
-            </div>
-        <?php } ?>
-    </section>
+    <main>
+        <h1>Netflix</h1>
+
+        <section id="peliculas">
+            <?php foreach ($netflix as $peli) { ?>
+                <div class="card">
+                    <h2> <?= $peli['titulo'] ?> <span><?= $peli['año'] ?></span></h2>
+                    <p>Directed by: <?= $peli['director'] ?></p>
+                    <p>Género: <?= $peli['genero'] ?></p>
+                </div>
+            <?php } ?>
+        </section>
+
+    </main>
 </body>
 
 </html>
