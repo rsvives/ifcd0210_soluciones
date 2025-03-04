@@ -1,3 +1,3 @@
 <?php
 
-echo $_GET;
+var_dump($_GET);
