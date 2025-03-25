@@ -1,0 +1,47 @@
+CREATE DATABASE ecommerce;
+USE ecommerce;
+
+CREATE TABLE categorias(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(120)
+);
+
+CREATE TABLE productos(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id_categoria INT UNSIGNED,
+  nombre VARCHAR(150),
+  marca VARCHAR(100),
+  precio DECIMAL(6,2)
+  
+);
+
+ALTER TABLE productos ADD FOREIGN KEY (id_categoria) REFERENCES categorias(id);
+ALTER TABLE productos ADD FOREIGN KEY (id_categoria)ON DELETE CASCADE;
+
+
+CREATE TABLE usuarios(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(200),
+  email VARCHAR(200),
+  contraseña VARCHAR(200)
+);
+
+CREATE TABLE direcciones(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id_usuario INT UNSIGNED,
+  calle VARCHAR(200),
+  piso VARCHAR(200),
+  ciudad VARCHAR(200),
+  provincia VARCHAR(200),
+  codigo_postal CHAR(9),
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE compras(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id_producto INT UNSIGNED,
+  id_usuario INT UNSIGNED,
+  fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_producto) REFERENCES productos(id) ON DELETE CASCADE ON UPDATE CASCADE
+);

@@ -30,11 +30,12 @@ $netflix = [
 ];
 
 
-function filtrarPelis($pelisArray,$genero){
+function filtrarPelis($pelisArray, $genero)
+{
     $nuevoArray = [];
     foreach ($pelisArray as $peli) {
-        if($peli["genero"]===$genero){
-            array_push($nuevoArray,$peli);
+        if ($peli["genero"] === $genero) {
+            array_push($nuevoArray, $peli);
         }
     }
     return $nuevoArray;
@@ -42,12 +43,18 @@ function filtrarPelis($pelisArray,$genero){
 
 
 // $pelisFiltradas = filtrarPelis($netflix,'Sci-Fi');
-$pelisFiltradas = array_filter($netflix,fn($peli)=>$peli['genero']==='Sci-Fi');
+$pelisFiltradas = array_filter($netflix, fn($peli) => $peli['genero'] === 'Sci-Fi');
 
-function porDos($param){
-    return $param*2;
+function porDos($param)
+{
+    return $param * 2;
 }
 
-fn($param)=>$param*2;
+fn($param) => $param * 2;
 
 var_dump($pelisFiltradas);
+
+
+
+//esto es una prueba para hacer una PR
+//esto es una prueba para hacer una PR
