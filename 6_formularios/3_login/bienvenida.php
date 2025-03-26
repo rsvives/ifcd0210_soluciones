@@ -1,6 +1,6 @@
 <?php
 
-$chori = $_GET['user'];
+$usuario = $_GET['user'];
 //opcional: recibir el nombre del usuario por url
 //pista: añadir el parametro como parametro opcional de la url(nombre del fichero) en la función header("Location: ...")
 ?>
@@ -15,7 +15,7 @@ $chori = $_GET['user'];
 
 <body>
 
-    <h1>Bienvenid@ usuario: <?= $chori ?></h1>
+    <h1>Bienvenid@ usuario: <?= $usuario ?></h1>
 
 
 
