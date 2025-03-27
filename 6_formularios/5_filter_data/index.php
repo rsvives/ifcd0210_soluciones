@@ -37,8 +37,8 @@ function showSelected()
 function highlightSelected($movie)
 {
     //opcional: (🌶️ spicy)
-    // funcion que recibe una película, la compara con la "selected" y, si coincide, añade una clase .highlight al <li> correspondiente
-    //  es necesario utilizar la función dentro del foreach de la funcion showMovies
+    // - funcion que recibe una película, la compara con la "selected" y, si coincide, añade la clase "highlight" al <li> correspondiente
+    // - es necesario utilizar la función dentro del foreach de la funcion showMovies
 
 }
 
@@ -52,6 +52,7 @@ function highlightSelected($movie)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5_filter_data</title>
+
 </head>
 
 <body>
