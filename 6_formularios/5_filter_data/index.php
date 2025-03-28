@@ -22,24 +22,35 @@ function showMovies($movies)
 {
     echo "<ul>";
     foreach ($movies as $key => $value) {
-        echo "<li>$value</li>";
+        echo "<li class=" . highlightSelected($key) . ">$value</li>";
     }
     echo "</ul>";
 }
 
-function showSelected()
+function showSelected($arrayPelis)
 {
+    // global $sci_fi_movies;
     // comprobar si existe "selected"
+    if (isset($_GET['selected'])) {
+        $posicion = $_GET['selected'];
+        // echo $sci_fi_movies[$posicion];
+        echo $arrayPelis[$posicion];
+    }
     // si existe, mostrar un párrafo con la película seleccionada
     // si no, mostrar "no hay seleccionada ninguna película"
 }
 
-function highlightSelected($movie)
+function highlightSelected($movieIndex)
 {
+
     //opcional: (🌶️ spicy)
     // - funcion que recibe una película, la compara con la "selected" y, si coincide, añade la clase "highlight" al <li> correspondiente
     // - es necesario utilizar la función dentro del foreach de la funcion showMovies
-
+    if (isset($_GET['selected'])) {
+        if ($movieIndex == $_GET['selected']) {
+            return 'highlight';
+        }
+    }
 }
 
 
@@ -52,7 +63,7 @@ function highlightSelected($movie)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5_filter_data</title>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -60,7 +71,7 @@ function highlightSelected($movie)
 
     <?php showMovies($sci_fi_movies); ?>
 
-    <?php showSelected(); ?>
+    <?php showSelected($sci_fi_movies); ?>
 
 </body>
 

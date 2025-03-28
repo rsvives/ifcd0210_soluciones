@@ -66,6 +66,7 @@ function mostrarPokemon()
 }
 
 
+
 function filtrarPokemon($tipo)
 {
     global $arrayPokemon;
