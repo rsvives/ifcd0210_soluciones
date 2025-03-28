@@ -8,10 +8,17 @@
 </head>
 
 <body>
-    <form action="./procesar.php">
-        <input type="text">
+    <form action="procesar.php" method="get">
+        <label for="input-email">Email</label><br>
+        <input id="input-email" type="email" name="email" placeholder="email@example.com"> <br>
+        <label for="input-password">Password</label><br>
+        <input id="input-password" type="password" name="password"> <br>
+
         <button type="submit">Enviar</button>
     </form>
+
 </body>
+
+
 
 </html>
