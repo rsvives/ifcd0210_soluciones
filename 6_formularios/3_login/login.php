@@ -1,9 +1,6 @@
 <?php
-
+// primero comprobar si nos llegan datos por "post"
 // var_dump($_POST);
-
-
-
 
 // comprobar si los valores recibidos del formulario coinciden con los siguientes:
 $user = 'admin';
