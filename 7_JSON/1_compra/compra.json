@@ -1,0 +1,26 @@
+[
+    {
+        "producto": "yogures",
+        "precio": 3.99
+    },
+    {
+        "producto": "café",
+        "precio": 2.75
+    },
+    {
+        "producto": "arroz",
+        "precio": 1.24
+    },
+    {
+        "producto": "guisantes",
+        "precio": 2.29
+    },
+    {
+        "producto": "jamón",
+        "precio": 3.25
+    },
+    {
+        "producto": "pipshas",
+        "precio": 9.99
+    }
+]
