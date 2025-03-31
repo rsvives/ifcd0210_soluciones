@@ -9,3 +9,5 @@ Leyendo la información de un fichero json, crear un html.
 2. Una vez leido el contenido, es necesario transformarlo a un array que se pueda iterar, para lo cual se utilizará la función `json_decode($texto)`. El resultado (un array) de dicha función se almacenará en una variable simplemente al igualar una variable a la función. Ej: ` $array = json_decode($texto)`
 
 3. Iterar la variable para ir generando un html de manera dinámica con un foreach
+
+4. Opcional: Mostrar el precio total de la lista de la compra
