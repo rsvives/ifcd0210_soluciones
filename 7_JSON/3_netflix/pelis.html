@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelis con JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Películas</h1>
+    <label for="input-filter-movies">Género:</label><br>
+    <input type="text" id="input-filter-movies">
+    <section id="movie-container">
+
+    </section>
+
+    <script>
+
+    function renderMovies(moviesArray){
+            const movieContainer = document.getElementById('movie-container')
+            movieContainer.innerHTML = ''
+            for (const movie of moviesArray) {
+                let movieHTML = document.createElement('article')
+                movieHTML.className='movie'
+                movieHTML.innerHTML = `      
+                    <div class="movie-header">
+                        <h2>${movie.titulo}</h2>
+                        <h3>${movie.año}</h3>
+                    </div>
+                    <p><b>Directed by:</b> ${movie.director}</p>
+                    <ul>
+                    ${movie.generos.map(g => '<li>'+g+'</li>')}
+                    </ul>
+                `
+                movieContainer.append(movieHTML)
+            }
+        }
+    async function fetchMovies(){
+        const response = await  fetch('./pelis.json')
+        const movies  = await response.json()
+        console.log(movies)
+
+        return movies
+    }
+        
+    async function filter(ev){
+        
+        const filtro = ev.target.value
+        // console.log(filtro)
+        
+        const movies = await fetchMovies()
+        // console.log(movies)
+        const filteredMovies = movies.filter(m=>m.generos.some(g=>g.toLowerCase().includes(filtro.toLowerCase())))
+        // console.log(filteredMovies)
+        renderMovies(filteredMovies)
+    }
+    
+    document.getElementById('input-filter-movies').addEventListener('input',filter)
+     fetchMovies().then(res=>renderMovies(res))
+    </script>
+</body>
+</html>
