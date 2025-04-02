@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "titulo": "Avatar",
+    "año": "2009",
+    "director": "James Cameron",
+    "generos": ["Sci-Fi", "Animacion", "Aventura"]
+  },
+  {
+    "titulo": "Alien, el octavo pasajero",
+    "año": "1979",
+    "director": "Ridley Scott",
+    "generos": ["Sci-Fi", "Suspense", "Terror"]
+  },
+  {
+    "titulo": "El gigante de hierro",
+    "año": "1999",
+    "director": "Brad Bird",
+    "generos": ["Animacion", "Infantil", "Aventura"]
+  }
+]

@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+
+#input-filter-movies{
+    margin-bottom: 1rem;
+}
+
+
+#movie-container{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.movie {
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    flex: 1;
+    min-width: 200px;
+
+}
